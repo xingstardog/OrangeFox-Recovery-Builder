@@ -25,7 +25,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox设备树'
         required: true
-        default: 'https://github.com/LimeBlogs/twrp_device_redmi12c'
+        default: 'https://github.com/xingstardog/android_device_xiaomi_socrates_twrp'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox设备树分支'
         required: true
@@ -33,11 +33,11 @@ on:
       DEVICE_PATH:
         description: '指定设备路径'
         required: true
-        default: 'device/xiaomi/earth'
+        default: 'device/xiaomi/socrates'
       DEVICE_NAME:
         description: '指定设备代号'
         required: true
-        default: 'earth'
+        default: 'socrates'
       BUILD_TARGET:
         description: '构建目标'
         required: true
@@ -49,7 +49,7 @@ on:
       DN:
         description: '设备名称'
         required: true
-        default: '如：红米12C'
+        default: 'Redmi K60 Pro'
         type: string
 
 jobs:

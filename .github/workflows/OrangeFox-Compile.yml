@@ -112,7 +112,9 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         set -e
-        lunch twrp_${{ inputs.DEVICE_NAME }}-eng && mka ${{ inputs.BUILD_TARGET }}image
+        export TARGET_PRODUCT=twrp_${{ inputs.DEVICE_NAME }}
+        export TARGET_BUILD_VARIANT=eng
+        mka ${{ inputs.BUILD_TARGET }}image
 
     - name: 💿 整理镜像
       run: |

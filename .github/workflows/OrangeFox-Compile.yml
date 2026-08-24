@@ -15,7 +15,7 @@ on:
       MANIFEST_BRANCH:
         description: 'OrangeFox 版本'
         required: true
-        default: '12.1'
+        default: '14.1'
         type: choice
         options:
         - 14.1
@@ -170,3 +170,10 @@ jobs:
           📅 构建日期: ${{ env.BUILD_DATE }}<br>
           <br>
           <strong>✅ 状态: 构建成功 (Build Successfully)</strong>
+          
+    - name: 强行提取所有镜像到 Actions 产物
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: OrangeFox-Images
+        path: ${{ github.workspace }}/OrangeFox/fox_*/out/target/product/*/*.img

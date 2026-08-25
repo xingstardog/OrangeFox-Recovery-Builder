@@ -115,9 +115,7 @@ jobs:
         export TARGET_PRODUCT=twrp_${{ inputs.DEVICE_NAME }}
         export TARGET_BUILD_VARIANT=eng
         export TARGET_RELEASE=ap2a
-        mkdir -p bootable/recovery/gui/theme/portrait_hdpi
-        touch bootable/recovery/gui/theme/portrait_hdpi/splash.xml
-        touch bootable/recovery/gui/theme/portrait_hdpi/ui.xml
+        sed -i '/themeversion/d' bootable/recovery/Android.mk
         mka ${{ inputs.BUILD_TARGET }}image
 
     - name: 💿 整理镜像

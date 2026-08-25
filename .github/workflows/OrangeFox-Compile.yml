@@ -116,6 +116,7 @@ jobs:
         export TARGET_BUILD_VARIANT=eng
         export TARGET_RELEASE=ap2a
         sed -i '/themeversion/d' bootable/recovery/Android.mk
+        sed -i 's/--exclude=cache/--exclude=cache --exclude=vendor/g' build/make/core/Makefile
         mka ${{ inputs.BUILD_TARGET }}image
 
     - name: 💿 整理镜像
